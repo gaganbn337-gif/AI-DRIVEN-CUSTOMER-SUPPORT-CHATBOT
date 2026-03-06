@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Welcome to AI Assistant</h1>
+                <p>Login or create a new account</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required />
+                </div>
+                <button type="submit" class="login-btn">Login / Sign Up</button>
+                <p class="login-note">New users will be automatically registered</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn" id="newChatBtn">
+                    <span class="icon">✏️</span>
+                    <span>New chat</span>
+                </button>
+            </div>
+
+            <div class="chat-history" id="chatHistoryList">
+                <div class="history-section">
+                    <h3>Your chats</h3>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">👤</div>
+                    <span id="userNameDisplay">User</span>
+                </div>
+                <button class="settings-btn" id="logoutBtn" title="Logout">🚪</button>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-content">
+            <div class="chat-header">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <h2>ChatGPT</h2>
+                <div class="header-controls">
+                    <button id="toggleVoiceResponseBtn" class="icon-btn active" title="Toggle voice responses">🔊</button>
+                </div>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-screen">
+                        <h1>What are you working on?</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <button class="attach-btn" title="Attach file">
+                        <label for="fileInput">
+                            📎
+                            <input type="file" id="fileInput" accept="image/*,.pdf,.txt,.doc,.docx" style="display: none;" />
+                        </label>
+                    </button>
+                    <input type="text" id="userInput" placeholder="Ask me anything..." />
+                    <button id="voiceBtn" class="voice-btn" title="Voice input">🎤</button>
+                    <button id="sendBtn" class="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
